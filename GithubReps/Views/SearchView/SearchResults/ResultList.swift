@@ -25,14 +25,12 @@ struct ResultList: View {
                         .swipeActions(edge: .leading, allowsFullSwipe: false) {
                             if mainViewModel.favourites.contains(repository) {
                                 Button("Удалить из избранного") {
-                                    if let index = mainViewModel.favourites.firstIndex(where: {$0.htmlURL == repository.htmlURL}) {
-                                        mainViewModel.favourites.remove(at: index)
-                                    }
+                                    mainViewModel.removeFromFavourites(repository)
                                 }
                                 .tint(.red)
                             } else {
                                 Button("Добавить в избранное") {
-                                    mainViewModel.favourites.append(repository)
+                                    mainViewModel.apendToFavourites(repository)
                                 }
                                 .tint(.orange)
                             }

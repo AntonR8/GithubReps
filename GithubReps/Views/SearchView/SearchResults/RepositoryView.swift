@@ -46,17 +46,7 @@ struct RepositoryView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    if let index = mainViewModel.favourites.firstIndex(where: {$0.htmlURL == repository.htmlURL}) {
-                        mainViewModel.favourites.remove(at: index)
-                                    } else {
-                                        let repositoryResponseInstance = RepositoryResponseModel(
-                                            name: repository.name,
-                                            owner: RepositoryResponseModel.Owner(login: repository.login, avatarURL: repository.avatarURL),
-                                            htmlURL: repository.htmlURL,
-                                            description: repository.description
-                                        )
-                                        mainViewModel.favourites.append(repositoryResponseInstance)
-                                    }
+                    mainViewModel.toggleFavourite(repository)
                 } label: {
                     Image(systemName: (mainViewModel.favourites.firstIndex(where: {$0.htmlURL == repository.htmlURL}) != nil) ? "star.fill" : "star")
                         .foregroundStyle(.orange)

@@ -27,7 +27,6 @@
 		1202B3D92D55E897004F187B /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202B3D82D55E88D004F187B /* DownloadManager.swift */; };
 		12D52FD62D562F7200A45EE7 /* SearchViewBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D52FD52D562F7200A45EE7 /* SearchViewBackGround.swift */; };
 		12D52FD82D58D46400A45EE7 /* SearchingProgressScreenCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D52FD72D58D45400A45EE7 /* SearchingProgressScreenCover.swift */; };
-		12D52FDC2D58E33D00A45EE7 /* FavouritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D52FDB2D58E32900A45EE7 /* FavouritesManager.swift */; };
 		12D52FE02D58E45800A45EE7 /* ConnectionTroublesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D52FDF2D58E44900A45EE7 /* ConnectionTroublesSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		1202B3D82D55E88D004F187B /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		12D52FD52D562F7200A45EE7 /* SearchViewBackGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewBackGround.swift; sourceTree = "<group>"; };
 		12D52FD72D58D45400A45EE7 /* SearchingProgressScreenCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingProgressScreenCover.swift; sourceTree = "<group>"; };
-		12D52FDB2D58E32900A45EE7 /* FavouritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesManager.swift; sourceTree = "<group>"; };
 		12D52FDF2D58E44900A45EE7 /* ConnectionTroublesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTroublesSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,6 @@
 		1202B39C2D54FEB2004F187B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				12D52FDB2D58E32900A45EE7 /* FavouritesManager.swift */,
 				1202B3D82D55E88D004F187B /* DownloadManager.swift */,
 			);
 			path = Services;
@@ -251,7 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1202B3AB2D55014C004F187B /* SearchView.swift in Sources */,
-				12D52FDC2D58E33D00A45EE7 /* FavouritesManager.swift in Sources */,
 				1202B3B62D551F04004F187B /* ResponseModel.swift in Sources */,
 				1202B3B22D550364004F187B /* QueryFieldView.swift in Sources */,
 				1202B3CE2D554728004F187B /* OwnerAvatar.swift in Sources */,

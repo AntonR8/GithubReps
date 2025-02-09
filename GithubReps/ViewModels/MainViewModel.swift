@@ -29,21 +29,6 @@ class MainViewModel {
         loadFavourites()
     }
 
-    //init:
-    private func saveFavourites() {
-        if let encodedData = try? JSONEncoder().encode(favourites) {
-            UserDefaults.standard.setValue(encodedData, forKey: "favourites")
-        }
-    }
-
-    private func loadFavourites() {
-        guard
-            let favouritesData = UserDefaults.standard.data(forKey: "favourites"),
-            let savedFavourites = try? JSONDecoder().decode([RepositoryResponseModel].self, from: favouritesData)
-        else { return }
-        self.favourites = savedFavourites
-    }
-
 
     // navigation:
     func returnNavigationTitle() -> String {
@@ -65,8 +50,8 @@ class MainViewModel {
             do {
                 async let response = try await findRepositories(query: query)
                 let result = try await response
-                showProgressView = false
                 path.append(result)
+                showProgressView = false
             } catch {
                 searchResultsTask?.cancel()
                 showProgressView = false
@@ -123,6 +108,45 @@ class MainViewModel {
                 )
                 path.append(repositoryInfo)
             }
+        }
+    }
+
+    //функции избранного:
+    private func saveFavourites() {
+        if let encodedData = try? JSONEncoder().encode(favourites) {
+            UserDefaults.standard.setValue(encodedData, forKey: "favourites")
+        }
+    }
+
+    private func loadFavourites() {
+        guard
+            let favouritesData = UserDefaults.standard.data(forKey: "favourites"),
+            let savedFavourites = try? JSONDecoder().decode([RepositoryResponseModel].self, from: favouritesData)
+        else { return }
+        self.favourites = savedFavourites
+    }
+
+    func toggleFavourite(_ repository: RepositoryModel) {
+        if let index = favourites.firstIndex(where: {$0.htmlURL == repository.htmlURL}) {
+            favourites.remove(at: index)
+        } else {
+            let repositoryResponseInstance = RepositoryResponseModel(
+                name: repository.name,
+                owner: RepositoryResponseModel.Owner(login: repository.login, avatarURL: repository.avatarURL),
+                htmlURL: repository.htmlURL,
+                description: repository.description
+            )
+            favourites.append(repositoryResponseInstance)
+        }
+    }
+
+    func apendToFavourites(_ repository: RepositoryResponseModel) {
+        favourites.append(repository)
+    }
+
+    func removeFromFavourites(_ repository: RepositoryResponseModel) {
+        if let index = favourites.firstIndex(where: {$0.htmlURL == repository.htmlURL}) {
+            favourites.remove(at: index)
         }
     }
 }

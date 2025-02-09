@@ -23,7 +23,6 @@ struct SearchingProgress: ViewModifier {
                     } else {
                         Text("Ожидаю ответ сервера...")
                             .foregroundStyle(.secondary)
-                            .transition(.opacity)
                     }
                     Spacer()
                     Button("Отменить", role: .destructive) {

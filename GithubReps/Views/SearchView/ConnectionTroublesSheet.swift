@@ -30,7 +30,7 @@ struct ConnectionTroublesSheet: ViewModifier {
                     }
                     .foregroundStyle(.red)
                 }
-                .presentationDetents([.height(200), .large])
+                .presentationDetents([.medium, .large])
             })
 
     }

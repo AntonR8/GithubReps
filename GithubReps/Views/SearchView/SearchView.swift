@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State var currentQuery: String = ""
+    @State private var currentQuery: String = ""
     @Bindable var mainViewModel: MainViewModel
     @FocusState var isFocused: Bool
 
