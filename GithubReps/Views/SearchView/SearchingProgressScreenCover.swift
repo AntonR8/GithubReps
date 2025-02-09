@@ -17,7 +17,7 @@ struct SearchingProgress: ViewModifier {
                     Spacer()
                     if mainViewModel.repositoriesFound > 0 {
                         Gauge(value: Double(mainViewModel.currentDownLoadingRepository), in: 0...Double(mainViewModel.repositoriesFound+100)) {
-                            Text("Загружаю результаты: \(mainViewModel.currentDownLoadingRepository) из \(mainViewModel.repositoriesFound)")
+                            Text("Найдено \(mainViewModel.repositoriesFound) репозиториев \n Загружаю результаты:")
                         }
                         .padding(32)
                     } else {

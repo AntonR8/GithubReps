@@ -58,10 +58,12 @@ let repositoryResponseModelMockData = RepositoryResponseModel(
 // https://api.github.com/users/openwisp
 struct OwnerResponse: Codable {
     let avatarURL: String
+    let name: String
     let email: String?
 
     enum CodingKeys: String, CodingKey {
         case avatarURL = "avatar_url"
+        case name
         case email
     }
 }
@@ -74,6 +76,7 @@ struct RepositoryModel: Codable, Hashable {
     let description: String?
     let login: String
     let avatarURL: String
+    let ownerName: String?
     let email: String?
 }
 
@@ -81,6 +84,6 @@ let repositoryModelMockData = RepositoryModel(
     name: "ansible-openwisp2-imagegenerator",
     htmlURL: "https://github.com/openwisp/ansible-openwisp2-imagegenerator",
     description: "Automatically build several openwisp2 firmware images for different organizations while keeping track of their differences", login: "openwisp",
-    avatarURL: "https://avatars.githubusercontent.com/u/1150243?v=4",
+    avatarURL: "https://avatars.githubusercontent.com/u/1150243?v=4", ownerName: "Alexey",
     email: "support@openwisp.io"
 )

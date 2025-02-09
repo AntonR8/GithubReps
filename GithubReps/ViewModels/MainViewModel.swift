@@ -104,6 +104,7 @@ class MainViewModel {
                     description: repositoryResponse.description,
                     login: repositoryResponse.owner.login,
                     avatarURL: repositoryResponse.owner.avatarURL,
+                    ownerName: result.name,
                     email: result.email
                 )
                 path.append(repositoryInfo)

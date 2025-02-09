@@ -15,7 +15,7 @@ struct RepositoryView: View {
         ScrollView {
             VStack {
                 OwnerAvatar(avatarURL: repository.avatarURL, avatarSize: 100, cornerRadius: 50)
-                Text(repository.login)
+                Text(repository.ownerName ?? repository.login)
                     .foregroundStyle(.secondary)
                 Text(repository.name)
                     .font(.title)
